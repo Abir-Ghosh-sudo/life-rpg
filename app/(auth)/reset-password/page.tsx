@@ -1,42 +1,47 @@
 export default function ResetPasswordPage() {
   return (
-    <main>
-      <h1>Reset your password</h1>
-      <p>Create a new password for your Life RPG account.</p>
+    <div>
+      <div className="auth-header">
+        <div className="auth-logo">✨</div>
+        <h1 className="auth-title">New Key</h1>
+        <p className="auth-subtitle">Forge a strong new password for your account</p>
+      </div>
 
-      <form>
-        <div>
-          <label htmlFor="new-password">New password</label>
-          <br />
+      <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+        <div className="form-group">
+          <label className="form-label" htmlFor="new-password">New Password</label>
           <input
             id="new-password"
             name="new-password"
             type="password"
-            placeholder="Enter a new password"
+            required
+            className="form-input"
+            placeholder="At least 8 characters"
           />
         </div>
 
-        <br />
-
-        <div>
-          <label htmlFor="confirm-password">Confirm password</label>
-          <br />
+        <div className="form-group">
+          <label className="form-label" htmlFor="confirm-password">Confirm New Password</label>
           <input
             id="confirm-password"
             name="confirm-password"
             type="password"
-            placeholder="Enter the password again"
+            required
+            className="form-input"
+            placeholder="Repeat your new password"
           />
         </div>
 
-        <br />
-
-        <button type="submit">Reset password</button>
+        <button type="submit" className="btn btn-primary w-full" style={{ marginTop: "8px", padding: "13px" }}>
+          🛡️ Reset Password
+        </button>
       </form>
 
-      <p>
-        <a href="/login">Back to log in</a>
-      </p>
-    </main>
+      <div className="auth-footer" style={{ marginTop: "24px" }}>
+        <a href="/login" style={{ fontWeight: 700, color: "var(--violet-light)" }}>
+          ← Back to Login
+        </a>
+      </div>
+    </div>
   );
 }

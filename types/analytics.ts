@@ -222,3 +222,20 @@ export type UserAnalytics = {
 
   generatedAt: ISODateString;
 };
+
+export type ActivityHistory = {
+  id: UUID;
+  userId: UUID;
+  date: ISODateString;
+  questsCompleted: number;
+  xpEarned: number;
+  goldEarned: number;
+  focusMinutes: number;
+  streak: number;
+  entityType?: string;
+  action?: string;
+  metadata?: Record<string, unknown>;
+  createdAt: ISODateString;
+};
+
+export type AnalyticsStats = AnalyticsSummary;

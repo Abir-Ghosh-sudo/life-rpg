@@ -1,6 +1,5 @@
 import type { World } from "@/types/adventure";
-
-import { WORLD_CONFIG } from "@/config/worlds";
+import { WORLD_LIST } from "@/config/worlds";
 
 /**
  * Get a world configuration by its identifier.
@@ -8,16 +7,18 @@ import { WORLD_CONFIG } from "@/config/worlds";
 export function getWorldConfig(
   worldId: string,
 ) {
-  return WORLD_CONFIG.find(
-    (world) => world.id === worldId,
-  ) ?? null;
+  return (
+    WORLD_LIST.find(
+      (world) => world.id === worldId,
+    ) ?? null
+  );
 }
 
 /**
  * Get all configured worlds.
  */
 export function getAllWorldConfigs() {
-  return [...WORLD_CONFIG];
+  return [...WORLD_LIST];
 }
 
 /**
@@ -31,7 +32,7 @@ export function getUnlockedWorldConfigs(
     Math.floor(level),
   );
 
-  return WORLD_CONFIG.filter(
+  return WORLD_LIST.filter(
     (world) => world.requiredLevel <= safeLevel,
   );
 }
@@ -67,7 +68,7 @@ export function getNextWorld(
   );
 
   return (
-    WORLD_CONFIG.find(
+    WORLD_LIST.find(
       (world) => world.requiredLevel > safeLevel,
     ) ?? null
   );
@@ -80,7 +81,7 @@ export function getWorldByOrder(
   order: number,
 ) {
   return (
-    WORLD_CONFIG.find(
+    WORLD_LIST.find(
       (world) => world.order === order,
     ) ?? null
   );
@@ -90,7 +91,7 @@ export function getWorldByOrder(
  * Return the total number of configured worlds.
  */
 export function getWorldCount(): number {
-  return WORLD_CONFIG.length;
+  return WORLD_LIST.length;
 }
 
 /**
@@ -105,7 +106,7 @@ export function toWorldSummary(
     description: world.description,
     order: world.order,
     requiredLevel: world.requiredLevel,
-    regionCount: world.regionCount,
-    isActive: world.isActive,
+    regionCount: world.regionCount ?? 0,
+    isActive: world.isActive ?? true,
   };
 }

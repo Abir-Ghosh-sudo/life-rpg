@@ -197,22 +197,22 @@ export async function getAdventureSummary(): Promise<
 
   const unlockedWorldIds = new Set(
     progress
-      .filter((item) => item.isUnlocked)
+      .filter((item) => item.isUnlocked ?? item.unlocked)
       .map((item) => item.worldId),
   );
 
   const completedWorldIds = new Set(
     progress
-      .filter((item) => item.isCompleted)
+      .filter((item) => item.isCompleted ?? item.completed)
       .map((item) => item.worldId),
   );
 
   const unlockedRegions = progress.filter(
-    (item) => item.isUnlocked,
+    (item) => item.isUnlocked ?? item.unlocked,
   ).length;
 
   const completedRegions = progress.filter(
-    (item) => item.isCompleted,
+    (item) => item.isCompleted ?? item.completed,
   ).length;
 
   return {

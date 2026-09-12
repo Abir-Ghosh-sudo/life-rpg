@@ -1,29 +1,36 @@
 export default function ForgotPasswordPage() {
   return (
-    <main>
-      <h1>Forgot your password?</h1>
-      <p>Enter your email and we will send you a reset link.</p>
+    <div>
+      <div className="auth-header">
+        <div className="auth-logo">🔑</div>
+        <h1 className="auth-title">Recover Spell</h1>
+        <p className="auth-subtitle">Enter your email and we will send a password reset spell</p>
+      </div>
 
-      <form>
-        <div>
-          <label htmlFor="email">Email</label>
-          <br />
+      <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+        <div className="form-group">
+          <label className="form-label" htmlFor="email">Registered Email</label>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="Enter your email"
+            required
+            className="form-input"
+            placeholder="hero@realm.com"
           />
         </div>
 
-        <br />
-
-        <button type="submit">Send reset link</button>
+        <button type="submit" className="btn btn-primary w-full" style={{ marginTop: "8px", padding: "13px" }}>
+          📬 Send Reset Link
+        </button>
       </form>
 
-      <p>
-        <a href="/login">Back to log in</a>
-      </p>
-    </main>
+      <div className="auth-footer" style={{ marginTop: "24px" }}>
+        Remembered your secret?{" "}
+        <a href="/login" style={{ fontWeight: 700, color: "var(--violet-light)" }}>
+          Back to Login
+        </a>
+      </div>
+    </div>
   );
 }

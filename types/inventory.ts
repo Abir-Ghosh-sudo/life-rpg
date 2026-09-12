@@ -50,6 +50,9 @@ export type Item = {
 
   tradeable: boolean;
 
+  category?: string;
+  isActive?: boolean;
+
   createdAt: ISODateString;
   updatedAt: ISODateString;
 };
@@ -63,6 +66,8 @@ export type InventoryItem = {
   quantity: number;
 
   equipped: boolean;
+  isEquipped?: boolean;
+  is_equipped?: boolean;
 
   acquiredAt: ISODateString;
 

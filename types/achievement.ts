@@ -39,6 +39,7 @@ export type AchievementStatus =
 
 export type Achievement = {
   id: UUID;
+  code?: string;
 
   name: string;
   description: string;
@@ -50,11 +51,14 @@ export type Achievement = {
 
   requirementType: AchievementRequirementType;
   requirementValue: number;
+  value?: number;
 
   xpReward: number;
   goldReward: number;
 
   hidden: boolean;
+  isSecret?: boolean;
+  isActive?: boolean;
 
   createdAt: ISODateString;
   updatedAt: ISODateString;
@@ -67,6 +71,7 @@ export type UserAchievement = {
   achievementId: UUID;
 
   progress: number;
+  currentValue?: number;
 
   status: AchievementStatus;
 

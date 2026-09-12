@@ -20,36 +20,25 @@ export interface TransactionSummary {
 }
 
 function mapTransaction(
-  transaction: {
-    id: string;
-    user_id: string;
-    amount: number;
-    balance_before: number;
-    balance_after: number;
-    type: string;
-    source_type?: string | null;
-    source_id?: string | null;
-    metadata?: Record<string, unknown> | null;
-    created_at: string;
-  },
+  transaction: any,
 ): EconomyTransaction {
   return {
     id: transaction.id,
-    userId: transaction.user_id,
+    userId: transaction.userId ?? transaction.user_id,
     amount: Number(transaction.amount),
     balanceBefore:
-      Number(transaction.balance_before),
+      Number(transaction.balanceBefore ?? transaction.balance_before ?? 0),
     balanceAfter:
-      Number(transaction.balance_after),
+      Number(transaction.balanceAfter ?? transaction.balance_after ?? 0),
     type: transaction.type,
     sourceType:
-      transaction.source_type ?? null,
+      transaction.sourceType ?? transaction.source_type ?? null,
     sourceId:
-      transaction.source_id ?? null,
+      transaction.sourceId ?? transaction.source_id ?? null,
     metadata:
       transaction.metadata ?? {},
     createdAt:
-      transaction.created_at,
+      transaction.createdAt ?? transaction.created_at ?? new Date().toISOString(),
   };
 }
 

@@ -52,7 +52,7 @@ export async function unlockSkill(
   if (existing) {
     const userSkill = existing as UserSkill;
 
-    if (userSkill.isUnlocked) {
+    if (userSkill.unlockedAt) {
       return {
         success: true,
         skill: typedSkill,
@@ -157,7 +157,7 @@ export async function upgradeSkill(
 
   const current = userSkill as UserSkill;
 
-  if (!current.isUnlocked) {
+  if (current.unlockedAt) {
     return {
       success: false,
       skill: typedSkill,
@@ -166,10 +166,7 @@ export async function upgradeSkill(
     };
   }
 
-  const currentLevel = Math.max(
-    1,
-    current.level ?? 1,
-  );
+  const currentLevel = 1;
 
   const { data, error } = await supabase
     .from("user_skills")

@@ -23,6 +23,8 @@ import type {
   EventActionResult,
   GenerateEventResult,
   UserEvent,
+  RandomEvent,
+  UserEventStatus,
 } from "@/features/events/types";
 
 function mapUserEvent(
@@ -168,8 +170,8 @@ export async function generateRandomEvent(
     event: {
       id: userEvent.id,
       definition:
-        generated.definition,
-      status: userEvent.status,
+        generated.definition as unknown as RandomEvent,
+      status: userEvent.status as UserEventStatus,
       reward: {
         xp: userEvent.xpReward,
         gold: userEvent.goldReward,

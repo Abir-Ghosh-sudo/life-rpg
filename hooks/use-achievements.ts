@@ -54,7 +54,7 @@ export function useAchievements() {
   const unlockedAchievements = useMemo(
     () =>
       achievements.filter(
-        (achievement) => achievement.unlocked_at !== null,
+        (achievement) => achievement.unlockedAt !== null,
       ),
     [achievements],
   );

@@ -9,21 +9,76 @@ export type ComboState = {
  * Return the configured combo multiplier increase.
  */
 function getComboIncrement(): number {
-  return GAME_CONFIG.progression.combo.increment;
+  return GAME_CONFIG.combo.incrementPerQuest;
 }
 
 /**
  * Return the configured maximum combo multiplier.
  */
 function getMaxComboMultiplier(): number {
-  return GAME_CONFIG.progression.combo.maxMultiplier;
+  return GAME_CONFIG.combo.maximumMultiplier;
 }
 
 /**
  * Return the combo reset window in milliseconds.
  */
 function getComboResetWindow(): number {
-  return GAME_CONFIG.progression.combo.resetHours * 60 * 60 * 1000;
+  return GAME_CONFIG.combo.resetAfterHours * 60 * 60 * 1000;
+}
+
+/**
+ * Calculate the combo multiplier for a given combo count.
+ */
+export function calculateComboMultiplier(combo: number): number {
+  if (combo <= 0) {
+    return 1;
+  }
+
+  const multiplier = 1 + combo * getComboIncrement();
+  return Math.min(getMaxComboMultiplier(), multiplier);
+}
+
+/**
+ * Increment combo count safely.
+ */
+export function incrementCombo(combo: number): number {
+  const safe = Math.max(0, combo);
+  return safe + 1;
+}
+
+/**
+ * Reset combo count to zero.
+ */
+export function resetCombo(): number {
+  return 0;
+}
+
+/**
+ * Get multiplier for a combo count.
+ */
+export function getComboMultiplier(combo: number): number {
+  return calculateComboMultiplier(combo);
+}
+
+/**
+ * Check whether a combo window has expired.
+ */
+export function isComboExpired(
+  lastActivity: Date | string | null,
+  now: Date | string = new Date(),
+): boolean {
+  if (!lastActivity) {
+    return false;
+  }
+
+  const last = new Date(lastActivity).getTime();
+  const current = new Date(now).getTime();
+
+  if (!Number.isFinite(last) || !Number.isFinite(current)) {
+    return false;
+  }
+
+  return current - last > getComboResetWindow();
 }
 
 /**
@@ -37,14 +92,7 @@ export function isComboActive(
     return false;
   }
 
-  const last = new Date(lastCompletionAt).getTime();
-  const current = new Date(now).getTime();
-
-  if (!Number.isFinite(last) || !Number.isFinite(current)) {
-    return false;
-  }
-
-  return current - last <= getComboResetWindow();
+  return !isComboExpired(lastCompletionAt, now);
 }
 
 /**
@@ -93,13 +141,6 @@ export function normalizeCombo(
     getMaxComboMultiplier(),
     Math.max(1, multiplier),
   );
-}
-
-/**
- * Reset combo to its base multiplier.
- */
-export function resetCombo(): number {
-  return 1;
 }
 
 /**

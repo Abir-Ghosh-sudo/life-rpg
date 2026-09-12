@@ -1,27 +1,27 @@
 import type {
+  Character,
+  CharacterStats,
+} from "@/types/character";
+import type {
+  Quest,
+  QuestCompletion,
+} from "@/types/quest";
+import type {
   Achievement,
   UserAchievement,
 } from "@/types/achievement";
-import type {
-  AdventureProgress,
-  Region,
-  World,
-} from "@/types/adventure";
 import type {
   Boss,
   BossProgress,
 } from "@/types/boss";
 import type {
-  Character,
-  CharacterStats,
-} from "@/types/character";
+  World,
+  Region,
+  AdventureProgress,
+} from "@/types/adventure";
 import type {
   FocusSession,
 } from "@/types/focus";
-import type {
-  Quest,
-  QuestCompletion,
-} from "@/types/quest";
 import type {
   Skill,
   UserSkill,
@@ -31,6 +31,7 @@ import type {
   UserTheme,
 } from "@/types/theme";
 import type {
+  Profile,
   UserProfile,
 } from "@/types/profile";
 import type {
@@ -52,187 +53,57 @@ import type {
   Notification,
 } from "@/types/notification";
 
+export type TableDef<T> = {
+  Row: T & Record<string, any>;
+  Insert: Partial<T> & Record<string, any>;
+  Update: Partial<T> & Record<string, any>;
+  Relationships: any[];
+};
+
 export type Database = {
   public: {
     Tables: {
-      profiles: {
-        Row: UserProfile;
-        Insert: Partial<UserProfile>;
-        Update: Partial<UserProfile>;
-      };
-
-      characters: {
-        Row: Character;
-        Insert: Partial<Character>;
-        Update: Partial<Character>;
-      };
-
-      character_stats: {
-        Row: CharacterStats;
-        Insert: Partial<CharacterStats>;
-        Update: Partial<CharacterStats>;
-      };
-
-      quests: {
-        Row: Quest;
-        Insert: Partial<Quest>;
-        Update: Partial<Quest>;
-      };
-
-      quest_completions: {
-        Row: QuestCompletion;
-        Insert: Partial<QuestCompletion>;
-        Update: Partial<QuestCompletion>;
-      };
-
-      achievements: {
-        Row: Achievement;
-        Insert: Partial<Achievement>;
-        Update: Partial<Achievement>;
-      };
-
-      user_achievements: {
-        Row: UserAchievement;
-        Insert: Partial<UserAchievement>;
-        Update: Partial<UserAchievement>;
-      };
-
-      items: {
-        Row: Item;
-        Insert: Partial<Item>;
-        Update: Partial<Item>;
-      };
-
-      inventory: {
-        Row: InventoryItem;
-        Insert: Partial<InventoryItem>;
-        Update: Partial<InventoryItem>;
-      };
-
-      wallet: {
-        Row: Wallet;
-        Insert: Partial<Wallet>;
-        Update: Partial<Wallet>;
-      };
-
-      wallet_transactions: {
-        Row: WalletTransaction;
-        Insert: Partial<WalletTransaction>;
-        Update: Partial<WalletTransaction>;
-      };
-
-      bosses: {
-        Row: Boss;
-        Insert: Partial<Boss>;
-        Update: Partial<Boss>;
-      };
-
-      boss_progress: {
-        Row: BossProgress;
-        Insert: Partial<BossProgress>;
-        Update: Partial<BossProgress>;
-      };
-
-      worlds: {
-        Row: World;
-        Insert: Partial<World>;
-        Update: Partial<World>;
-      };
-
-      regions: {
-        Row: Region;
-        Insert: Partial<Region>;
-        Update: Partial<Region>;
-      };
-
-      adventure_progress: {
-        Row: AdventureProgress;
-        Insert: Partial<AdventureProgress>;
-        Update: Partial<AdventureProgress>;
-      };
-
-      skills: {
-        Row: Skill;
-        Insert: Partial<Skill>;
-        Update: Partial<Skill>;
-      };
-
-      user_skills: {
-        Row: UserSkill;
-        Insert: Partial<UserSkill>;
-        Update: Partial<UserSkill>;
-      };
-
-      focus_sessions: {
-        Row: FocusSession;
-        Insert: Partial<FocusSession>;
-        Update: Partial<FocusSession>;
-      };
-
-      activity_history: {
-        Row: ActivityHistory;
-        Insert: Partial<ActivityHistory>;
-        Update: Partial<ActivityHistory>;
-      };
-
-      themes: {
-        Row: Theme;
-        Insert: Partial<Theme>;
-        Update: Partial<Theme>;
-      };
-
-      user_themes: {
-        Row: UserTheme;
-        Insert: Partial<UserTheme>;
-        Update: Partial<UserTheme>;
-      };
-
-      random_events: {
-        Row: RandomEvent;
-        Insert: Partial<RandomEvent>;
-        Update: Partial<RandomEvent>;
-      };
-
-      user_events: {
-        Row: UserEvent;
-        Insert: Partial<UserEvent>;
-        Update: Partial<UserEvent>;
-      };
-
-      notifications: {
-        Row: Notification;
-        Insert: Partial<Notification>;
-        Update: Partial<Notification>;
-      };
+      profiles: TableDef<UserProfile>;
+      characters: TableDef<Character>;
+      character_stats: TableDef<CharacterStats>;
+      quests: TableDef<Quest>;
+      quest_completions: TableDef<QuestCompletion>;
+      achievements: TableDef<Achievement>;
+      user_achievements: TableDef<UserAchievement>;
+      items: TableDef<Item>;
+      inventory: TableDef<InventoryItem>;
+      wallet: TableDef<Wallet>;
+      wallet_transactions: TableDef<WalletTransaction>;
+      bosses: TableDef<Boss>;
+      boss_progress: TableDef<BossProgress>;
+      worlds: TableDef<World>;
+      regions: TableDef<Region>;
+      adventure_progress: TableDef<AdventureProgress>;
+      skills: TableDef<Skill>;
+      user_skills: TableDef<UserSkill>;
+      focus_sessions: TableDef<FocusSession>;
+      activity_history: TableDef<ActivityHistory>;
+      themes: TableDef<Theme>;
+      user_themes: TableDef<UserTheme>;
+      random_events: TableDef<RandomEvent>;
+      user_events: TableDef<UserEvent>;
+      notifications: TableDef<Notification>;
+      [key: string]: TableDef<Record<string, any>>;
     };
 
     Views: Record<string, never>;
-
     Functions: Record<string, never>;
-
     Enums: Record<string, never>;
-
     CompositeTypes: Record<string, never>;
   };
 };
 
-export type PublicDatabase =
-  Database["public"];
+export type PublicDatabase = Database["public"];
 
-export type TableName =
-  keyof PublicDatabase["Tables"];
+export type TableName = keyof PublicDatabase["Tables"];
 
-export type TableRow<
-  T extends TableName,
-> =
-  PublicDatabase["Tables"][T]["Row"];
+export type TableRow<T extends TableName> = PublicDatabase["Tables"][T]["Row"];
 
-export type TableInsert<
-  T extends TableName,
-> =
-  PublicDatabase["Tables"][T]["Insert"];
+export type TableInsert<T extends TableName> = PublicDatabase["Tables"][T]["Insert"];
 
-export type TableUpdate<
-  T extends TableName,
-> =
-  PublicDatabase["Tables"][T]["Update"];
+export type TableUpdate<T extends TableName> = PublicDatabase["Tables"][T]["Update"];

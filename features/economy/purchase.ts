@@ -97,7 +97,7 @@ export async function validatePurchase(
     getInventoryItem(input.itemId),
   ]);
 
-  if (!item || !item.isActive) {
+  if (!item || item.isActive === false) {
     return {
       valid: false,
       item: null,

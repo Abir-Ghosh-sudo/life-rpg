@@ -2,11 +2,12 @@ import { createClient } from "@/lib/supabase/server";
 import { getCurrentUserId } from "@/lib/auth/session";
 import type {
   RandomEvent,
+  RandomEventStatus,
   UserEvent,
 } from "@/types/event";
 
 export interface EventQueryOptions {
-  status?: string;
+  status?: RandomEventStatus;
   limit?: number;
   activeOnly?: boolean;
 }

@@ -385,5 +385,5 @@ export function toAnalyticsStats(
       summary.focus.totalMinutes,
     activeDays:
       summary.activity.activeDays,
-  } as AnalyticsStats;
+  } as unknown as AnalyticsStats;
 }

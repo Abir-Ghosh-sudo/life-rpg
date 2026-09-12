@@ -58,10 +58,19 @@ export const QUEST_CONFIG = {
 
   limits: {
     maximumActiveQuests: 50,
+    maxActiveQuests: 50,
 
     maximumDailyQuests: 10,
 
     maximumQuestChainLength: 10,
+  },
+
+  pagination: {
+    defaultPage: 1,
+    defaultLimit: 20,
+    defaultPageSize: 20,
+    maxPageSize: 100,
+    maxLimit: 100,
   },
 
   streak: {

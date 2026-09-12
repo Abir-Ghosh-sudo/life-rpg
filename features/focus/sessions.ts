@@ -102,7 +102,7 @@ export function getSessionProgress(
 ): FocusSessionProgress {
   const duration = Math.max(
     1,
-    Number(session.durationMinutes),
+    Number(session.plannedDuration),
   );
 
   const elapsed = Math.min(
@@ -178,12 +178,12 @@ export function canCancelSession(
 export function getSessionCompletionDate(
   session: FocusSession,
 ): Date | null {
-  if (!session.completedAt) {
+  if (!session.endedAt) {
     return null;
   }
 
   return new Date(
-    session.completedAt,
+    session.endedAt,
   );
 }
 
@@ -193,7 +193,7 @@ export function getSessionDurationMinutes(
   return Math.max(
     0,
     Number(
-      session.durationMinutes ?? 0,
+      session.plannedDuration ?? 0,
     ),
   );
 }
@@ -206,7 +206,7 @@ export function getCompletedMinutes(
     Math.max(
       0,
       Number(
-        session.completedMinutes ?? 0,
+        session.actualDuration ?? 0,
       ),
     ),
   );

@@ -1,4 +1,15 @@
-import { differenceInCalendarDays, startOfDay } from "date-fns";
+function startOfDay(date: Date | string): Date {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+function differenceInCalendarDays(left: Date | string, right: Date | string): number {
+  const startLeft = startOfDay(left).getTime();
+  const startRight = startOfDay(right).getTime();
+  const msPerDay = 24 * 60 * 60 * 1000;
+  return Math.round((startLeft - startRight) / msPerDay);
+}
 
 /**
  * Normalize a date to the start of its local calendar day.

@@ -16,7 +16,7 @@ import {
   calculateQuestReward,
 } from "@/features/quests/rewards";
 
-import type { Quest } from "@/types/quest";
+import type { Quest, QuestCategory } from "@/types/quest";
 
 import { QUEST_CONFIG } from "@/config/quests";
 
@@ -95,7 +95,7 @@ export async function createQuest(input: unknown) {
       user_id: userId,
       title: data.title.trim(),
       description: data.description?.trim() || null,
-      category: data.category,
+      category: (data.category ?? "other") as QuestCategory,
       type: data.type ?? DEFAULT_QUEST_VALUES.type,
       difficulty,
       rarity,
@@ -103,9 +103,9 @@ export async function createQuest(input: unknown) {
       xp_reward: reward.xp,
       gold_reward: reward.gold,
       energy_cost:
-        QUEST_CONFIG.energyCost[difficulty],
-      is_daily: data.isDaily ?? false,
-      due_at: data.dueAt ?? null,
+        QUEST_CONFIG.energyCost[difficulty as keyof typeof QUEST_CONFIG.energyCost],
+      is_daily: (data.type ?? DEFAULT_QUEST_VALUES.type) === "daily",
+      due_at: data.dueDate ?? null,
       chain_id: data.chainId ?? null,
       chain_order: data.chainOrder ?? null,
     })
@@ -209,12 +209,12 @@ export async function updateQuest(
     updateData.status = data.status;
   }
 
-  if (data.dueAt !== undefined) {
-    updateData.due_at = data.dueAt;
+  if (data.dueDate !== undefined) {
+    updateData.due_at = data.dueDate;
   }
 
-  if (data.isDaily !== undefined) {
-    updateData.is_daily = data.isDaily;
+  if (data.type !== undefined) {
+    updateData.is_daily = data.type === "daily";
   }
 
   if (data.chainId !== undefined) {
@@ -271,7 +271,7 @@ export async function updateQuest(
     updateData.xp_reward = reward.xp;
     updateData.gold_reward = reward.gold;
     updateData.energy_cost =
-      QUEST_CONFIG.energyCost[difficulty];
+      QUEST_CONFIG.energyCost[difficulty as keyof typeof QUEST_CONFIG.energyCost];
   }
 
   if (Object.keys(updateData).length === 0) {
@@ -594,7 +594,11 @@ export async function completeQuest(input: unknown) {
     };
   }
 
-  const questId = validation.data;
+  const validData = (validation as any).data;
+  const questId =
+    typeof validData === "string"
+      ? validData
+      : validData?.questId;
 
   const supabase = await createClient();
 

@@ -22,7 +22,10 @@ export type RandomEventStatus =
   | "active"
   | "completed"
   | "expired"
-  | "declined";
+  | "declined"
+  | "claimed"
+  | "pending"
+  | "dismissed";
 
 export type RandomEvent = {
   id: UUID;
@@ -37,11 +40,23 @@ export type RandomEvent = {
   icon: string;
 
   durationMinutes: number;
+  durationHours?: number;
 
   xpReward: number;
   goldReward: number;
 
+  minXpReward?: number;
+  maxXpReward?: number;
+  minGoldReward?: number;
+  maxGoldReward?: number;
+
   energyReward: number;
+  energyChange?: number;
+  hpChange?: number;
+
+  isPositive?: boolean;
+  isActive?: boolean;
+  probability?: number;
 
   status: RandomEventStatus;
 
@@ -65,6 +80,8 @@ export type UserEvent = {
   target: number;
 
   rewardClaimed: boolean;
+
+  expiresAt?: Nullable<ISODateString>;
 
   startedAt: Nullable<ISODateString>;
   completedAt: Nullable<ISODateString>;

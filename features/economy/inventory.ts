@@ -343,7 +343,7 @@ export async function getInventoryStats() {
 
   const equipped =
     items.filter(
-      (item) => item.isEquipped,
+      (item) => item.equipped ?? item.isEquipped,
     );
 
   const totalQuantity =

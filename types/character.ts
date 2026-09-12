@@ -63,6 +63,21 @@ export type CharacterAttributeValues = {
   charisma: number;
 };
 
+export type CharacterAttributeStats = CharacterAttributeValues;
+
+export type CharacterClassConfig = {
+  name: string;
+  description: string;
+  icon: string;
+  primaryAttribute: Attribute;
+  startingStats: CharacterAttributeValues;
+  hpBonus: number;
+  energyBonus: number;
+  bonuses: Record<string, number>;
+  attributeBonuses?: Partial<CharacterAttributeValues>;
+};
+
+
 export type CreateCharacterInput = {
   name: string;
   class: CharacterClass;

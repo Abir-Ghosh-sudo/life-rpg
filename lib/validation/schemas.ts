@@ -65,6 +65,8 @@ export const createCharacterSchema = z.object({
   ]),
 });
 
+export const characterCreateSchema = createCharacterSchema;
+
 export const updateCharacterSchema = z.object({
   name: z
     .string()
@@ -82,6 +84,9 @@ export const updateCharacterSchema = z.object({
     ])
     .optional(),
 });
+
+export const characterUpdateSchema = updateCharacterSchema;
+
 
 export const createQuestSchema = z.object({
   title: z
@@ -176,9 +181,13 @@ export const updateQuestSchema =
       .optional(),
   });
 
-export const questIdSchema = z.object({
-  questId: uuidSchema,
-});
+export const questIdSchema = z.union([
+  z.object({ questId: uuidSchema }),
+  uuidSchema.transform((id) => ({ questId: id })),
+]);
+
+export const questCreateSchema = createQuestSchema;
+export const questUpdateSchema = updateQuestSchema;
 
 export const paginationParamsSchema =
   paginationSchema.extend({

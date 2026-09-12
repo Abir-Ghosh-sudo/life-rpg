@@ -1,7 +1,6 @@
 import type {
   QuestDifficulty,
   QuestRarity,
-  QuestReward,
 } from "@/types/quest";
 
 import { DIFFICULTY_CONFIG } from "@/config/difficulties";
@@ -15,12 +14,19 @@ export interface QuestRewardInput {
   streakMultiplier?: number;
 }
 
-export interface CalculatedQuestReward extends QuestReward {
+export interface CalculatedQuestReward {
+  xp: number;
+  gold: number;
   baseXp: number;
   baseGold: number;
   rarityMultiplier: number;
   comboMultiplier: number;
   streakMultiplier: number;
+}
+
+export interface QuestRewardValue {
+  xp: number;
+  gold: number;
 }
 
 /**
@@ -49,14 +55,14 @@ export function calculateQuestReward(
   const difficulty = DIFFICULTY_CONFIG[input.difficulty];
   const rarity = RARITY_CONFIG[input.rarity];
 
-  const baseXp = difficulty.xp;
-  const baseGold = difficulty.gold;
+  const baseXp = difficulty.xpReward;
+  const baseGold = difficulty.goldReward;
 
-  const rarityMultiplier = normalizeMultiplier(rarity.multiplier);
+  const rarityMultiplier = normalizeMultiplier(rarity.rewardMultiplier);
 
   const comboMultiplier = Math.min(
     normalizeMultiplier(input.comboMultiplier),
-    GAME_CONFIG.progression.combo.maxMultiplier,
+    GAME_CONFIG.combo.maximumMultiplier,
   );
 
   const streakMultiplier = normalizeMultiplier(input.streakMultiplier);
@@ -86,7 +92,7 @@ export function calculateQuestReward(
 export function calculateBaseQuestReward(
   difficulty: QuestDifficulty,
   rarity: QuestRarity,
-): QuestReward {
+): CalculatedQuestReward {
   return calculateQuestReward({
     difficulty,
     rarity,
@@ -99,9 +105,9 @@ export function calculateBaseQuestReward(
  * Useful for special events, bonuses or temporary game effects.
  */
 export function applyRewardMultiplier(
-  reward: QuestReward,
+  reward: QuestRewardValue,
   multiplier: number,
-): QuestReward {
+): QuestRewardValue {
   const safeMultiplier = normalizeMultiplier(multiplier);
 
   return {
@@ -113,7 +119,7 @@ export function applyRewardMultiplier(
 /**
  * Combine multiple rewards into a single reward.
  */
-export function combineRewards(...rewards: QuestReward[]): QuestReward {
+export function combineRewards(...rewards: QuestRewardValue[]): QuestRewardValue {
   return rewards.reduce(
     (total, reward) => ({
       xp: total.xp + Math.max(0, reward.xp),

@@ -1,0 +1,160 @@
+{
+  "character": {
+    "name": "Hero Eldrin",
+    "title": "Novice Adventurer",
+    "heroClass": "Warrior",
+    "level": 1,
+    "xp": 0,
+    "maxXp": 500,
+    "hp": 100,
+    "maxHp": 100,
+    "energy": 100,
+    "maxEnergy": 100,
+    "gold": 100,
+    "streak": 0,
+    "skillPoints": 1,
+    "attributes": {
+      "strength": 10,
+      "intellect": 10,
+      "discipline": 10,
+      "vitality": 10,
+      "agility": 10
+    }
+  },
+  "quests": [
+    {
+      "id": "q-1",
+      "title": "Awaken the Mind",
+      "desc": "Complete 10 minutes of morning meditation or mindful breathing.",
+      "diff": "Easy",
+      "type": "Health",
+      "xp": 40,
+      "gold": 15,
+      "emoji": "🧘",
+      "status": "active"
+    },
+    {
+      "id": "q-2",
+      "title": "Hydration Ritual",
+      "desc": "Drink 2 liters of pure water throughout your waking hours.",
+      "diff": "Easy",
+      "type": "Health",
+      "xp": 30,
+      "gold": 10,
+      "emoji": "💧",
+      "status": "active"
+    },
+    {
+      "id": "q-3",
+      "title": "Physical Conditioning",
+      "desc": "Engage in 30 minutes of strength exercises or brisk outdoor cardio.",
+      "diff": "Medium",
+      "type": "Fitness",
+      "xp": 80,
+      "gold": 30,
+      "emoji": "🏃",
+      "status": "active"
+    },
+    {
+      "id": "q-4",
+      "title": "Study of the Arcane",
+      "desc": "Read 25 pages of non-fiction, code documentation, or skill guide.",
+      "diff": "Medium",
+      "type": "Study",
+      "xp": 75,
+      "gold": 25,
+      "emoji": "📚",
+      "status": "active"
+    },
+    {
+      "id": "q-5",
+      "title": "Deep Work Sprint",
+      "desc": "Execute a 45-minute zero-distraction focus block on your primary objective.",
+      "diff": "Hard",
+      "type": "Work",
+      "xp": 150,
+      "gold": 50,
+      "emoji": "⚔️",
+      "status": "active"
+    }
+  ],
+  "boss": {
+    "id": "boss-1",
+    "name": "The Procrastination Dragon",
+    "title": "Devourer of Stolen Hours",
+    "level": 5,
+    "hp": 100,
+    "maxHp": 100,
+    "isDefeated": false,
+    "rewardClaimed": false,
+    "emoji": "🐉"
+  },
+  "equipped": {
+    "Weapon": {
+      "id": "eq-starter-sword",
+      "name": "Novice Iron Blade",
+      "desc": "A balanced sword carrying your early determination.",
+      "icon": "🗡️",
+      "type": "Weapon",
+      "stat": "+8 ATK DMG",
+      "price": 50,
+      "qty": 1,
+      "rarity": "Common",
+      "rarityClass": "badge-gray"
+    },
+    "Armor": {
+      "id": "eq-starter-armor",
+      "name": "Adventurer's Tunic",
+      "desc": "Lightweight leather armor for nimble travelers.",
+      "icon": "🛡️",
+      "type": "Armor",
+      "stat": "+10 Armor",
+      "price": 50,
+      "qty": 1,
+      "rarity": "Common",
+      "rarityClass": "badge-gray"
+    },
+    "Accessory": null
+  },
+  "bag": [
+    {
+      "id": "bg-starter-potion-1",
+      "name": "Focus Potion",
+      "desc": "Restores 20 energy immediately.",
+      "icon": "🧪",
+      "type": "Consumable",
+      "price": 40,
+      "qty": 2
+    },
+    {
+      "id": "bg-starter-potion-2",
+      "name": "Vitality Brew",
+      "desc": "Restores 25 health points.",
+      "icon": "❤️",
+      "type": "Consumable",
+      "price": 35,
+      "qty": 1
+    }
+  ],
+  "history": [
+    {
+      "id": "h-start",
+      "timeframe": "Today",
+      "title": "Awakened in the Realm",
+      "category": "Milestone",
+      "icon": "🌟",
+      "desc": "Your heroic journey began at Level 1.",
+      "time": "Initial Awakening",
+      "xp": 0,
+      "gold": 100,
+      "badgeColor": "badge-violet"
+    }
+  ],
+  "todayFocusCount": 0,
+  "user": {
+    "id": "usr-hero-1",
+    "email": "hero@realm.com",
+    "name": "Hero Eldrin"
+  },
+  "lastUpdated": "2026-09-12T20:55:48.123Z"
+}

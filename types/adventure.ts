@@ -29,6 +29,9 @@ export type World = {
 
   status: WorldStatus;
 
+  regionCount?: number;
+  isActive?: boolean;
+
   createdAt: ISODateString;
   updatedAt: ISODateString;
 };
@@ -53,8 +56,16 @@ export type Region = {
 
   status: RegionStatus;
 
+  isActive?: boolean;
+
   createdAt: ISODateString;
   updatedAt: ISODateString;
+};
+
+export type AdventureReward = {
+  xp: number;
+  gold: number;
+  items?: UUID[];
 };
 
 export type AdventureProgress = {
@@ -73,8 +84,10 @@ export type AdventureProgress = {
   totalQuests: number;
 
   unlocked: boolean;
+  isUnlocked?: boolean;
 
   completed: boolean;
+  isCompleted?: boolean;
 
   unlockedAt: Nullable<ISODateString>;
 

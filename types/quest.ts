@@ -8,11 +8,15 @@ import type {
   RewardType,
 } from "@/types/common";
 
+export type QuestDifficulty = Difficulty;
+export type QuestRarity = Rarity;
+
 export type QuestStatus =
   | "pending"
   | "in_progress"
   | "completed"
   | "cancelled";
+
 
 export type QuestCategory =
   | "coding"

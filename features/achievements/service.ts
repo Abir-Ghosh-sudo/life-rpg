@@ -29,7 +29,7 @@ export async function unlockAchievement(
     };
   }
 
-  if (!achievement.isActive) {
+  if (achievement.isActive === false) {
     return {
       success: false,
       message: "This achievement is inactive.",
@@ -56,7 +56,7 @@ export async function unlockAchievement(
       .from("user_achievements")
       .update({
         unlocked_at: now,
-        current_value: achievement.value,
+        current_value: achievement.requirementValue ?? achievement.value ?? 1,
       })
       .eq("user_id", userId)
       .eq("achievement_id", achievementId)
@@ -81,7 +81,7 @@ export async function unlockAchievement(
     .insert({
       user_id: userId,
       achievement_id: achievementId,
-      current_value: achievement.value,
+      current_value: achievement.requirementValue ?? achievement.value ?? 1,
       unlocked_at: now,
     })
     .select("*")
@@ -120,7 +120,7 @@ export async function updateAchievementProgress(
 
   const targetValue = Math.max(
     1,
-    Number(achievement.value ?? 1),
+    Number(achievement.requirementValue ?? achievement.value ?? 1),
   );
 
   const unlocked =

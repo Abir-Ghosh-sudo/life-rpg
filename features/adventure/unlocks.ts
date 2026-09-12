@@ -19,7 +19,7 @@ export function canUnlockWorld(
     };
   }
 
-  if (!world.isActive) {
+  if ((world as { isActive?: boolean }).isActive === false) {
     return {
       unlocked: false,
       reason: "This world is currently unavailable.",
@@ -52,7 +52,7 @@ export function canUnlockRegion(
     };
   }
 
-  if (!world.isActive) {
+  if ((world as { isActive?: boolean }).isActive === false) {
     return {
       unlocked: false,
       reason: "This world is currently unavailable.",

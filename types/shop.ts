@@ -134,3 +134,24 @@ export type ShopTransaction = {
 
   createdAt: ISODateString;
 };
+
+export type Wallet = {
+  id: UUID;
+  userId: UUID;
+  balance: number;
+  createdAt: ISODateString;
+  updatedAt: ISODateString;
+};
+
+export type WalletTransaction = {
+  id: UUID;
+  userId: UUID;
+  amount: number;
+  balanceBefore: number;
+  balanceAfter: number;
+  type: string;
+  sourceType?: Nullable<string>;
+  sourceId?: Nullable<UUID>;
+  metadata?: Nullable<Record<string, unknown>>;
+  createdAt: ISODateString;
+};

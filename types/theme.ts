@@ -45,6 +45,14 @@ export type Theme = {
 
   status: ThemeStatus;
 
+  // Optional convenience fields used by feature code
+  slug?: string;
+  goldCost?: number;
+  isActive?: boolean;
+  backgroundColor?: string;
+  surfaceColor?: string;
+  textColor?: string;
+
   createdAt: ISODateString;
   updatedAt: ISODateString;
 };
@@ -58,6 +66,9 @@ export type UserTheme = {
   unlockedAt: ISODateString;
 
   equipped: boolean;
+
+  // Optional alias fields
+  isApplied?: boolean;
 
   createdAt: ISODateString;
   updatedAt: ISODateString;

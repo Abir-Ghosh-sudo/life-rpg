@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ABIR/OneDrive/Desktop/hacathon/life%20rpg/life-rpg/app/loading.tsx"],"sourcesContent":["export default function Loading() {\r\n  return (\r\n    <main>\r\n      <h1>Loading Life RPG...</h1>\r\n      <p>Preparing your adventure.</p>\r\n    </main>\r\n  );\r\n}"],"names":["Loading"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8OAAC;;0BACC,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BAAE;;;;;;;;;;;;AAGT"}}]
-}

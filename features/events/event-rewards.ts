@@ -80,7 +80,7 @@ export function createEventReward(
 export function combineEventRewards(
   ...rewards: EventRewardInput[]
 ): EventReward {
-  return rewards.reduce(
+  return rewards.reduce<EventReward>(
     (total, reward) => ({
       xp:
         total.xp +

@@ -19,6 +19,8 @@ export type Profile = {
   updatedAt: ISODateString;
 };
 
+export type UserProfile = Profile;
+
 export type CreateProfileInput = {
   displayName: string;
   username?: string | null;

@@ -114,27 +114,27 @@ export const QUEST_DIFFICULTIES: Record<
   }
 > = {
   easy: {
-    label: DIFFICULTY_CONFIG.easy.label,
-    xp: DIFFICULTY_CONFIG.easy.xp,
-    gold: DIFFICULTY_CONFIG.easy.gold,
+    label: DIFFICULTY_CONFIG.easy.name,
+    xp: DIFFICULTY_CONFIG.easy.xpReward,
+    gold: DIFFICULTY_CONFIG.easy.goldReward,
     energyCost: DIFFICULTY_CONFIG.easy.energyCost,
   },
   medium: {
-    label: DIFFICULTY_CONFIG.medium.label,
-    xp: DIFFICULTY_CONFIG.medium.xp,
-    gold: DIFFICULTY_CONFIG.medium.gold,
+    label: DIFFICULTY_CONFIG.medium.name,
+    xp: DIFFICULTY_CONFIG.medium.xpReward,
+    gold: DIFFICULTY_CONFIG.medium.goldReward,
     energyCost: DIFFICULTY_CONFIG.medium.energyCost,
   },
   hard: {
-    label: DIFFICULTY_CONFIG.hard.label,
-    xp: DIFFICULTY_CONFIG.hard.xp,
-    gold: DIFFICULTY_CONFIG.hard.gold,
+    label: DIFFICULTY_CONFIG.hard.name,
+    xp: DIFFICULTY_CONFIG.hard.xpReward,
+    gold: DIFFICULTY_CONFIG.hard.goldReward,
     energyCost: DIFFICULTY_CONFIG.hard.energyCost,
   },
   epic: {
-    label: DIFFICULTY_CONFIG.epic.label,
-    xp: DIFFICULTY_CONFIG.epic.xp,
-    gold: DIFFICULTY_CONFIG.epic.gold,
+    label: DIFFICULTY_CONFIG.epic.name,
+    xp: DIFFICULTY_CONFIG.epic.xpReward,
+    gold: DIFFICULTY_CONFIG.epic.goldReward,
     energyCost: DIFFICULTY_CONFIG.epic.energyCost,
   },
 };
@@ -153,28 +153,28 @@ export const QUEST_RARITIES: Record<
   }
 > = {
   common: {
-    label: RARITY_CONFIG.common.label,
-    multiplier: RARITY_CONFIG.common.multiplier,
+    label: RARITY_CONFIG.common.name,
+    multiplier: RARITY_CONFIG.common.rewardMultiplier,
   },
   uncommon: {
-    label: RARITY_CONFIG.uncommon.label,
-    multiplier: RARITY_CONFIG.uncommon.multiplier,
+    label: RARITY_CONFIG.uncommon.name,
+    multiplier: RARITY_CONFIG.uncommon.rewardMultiplier,
   },
   rare: {
-    label: RARITY_CONFIG.rare.label,
-    multiplier: RARITY_CONFIG.rare.multiplier,
+    label: RARITY_CONFIG.rare.name,
+    multiplier: RARITY_CONFIG.rare.rewardMultiplier,
   },
   epic: {
-    label: RARITY_CONFIG.epic.label,
-    multiplier: RARITY_CONFIG.epic.multiplier,
+    label: RARITY_CONFIG.epic.name,
+    multiplier: RARITY_CONFIG.epic.rewardMultiplier,
   },
   legendary: {
-    label: RARITY_CONFIG.legendary.label,
-    multiplier: RARITY_CONFIG.legendary.multiplier,
+    label: RARITY_CONFIG.legendary.name,
+    multiplier: RARITY_CONFIG.legendary.rewardMultiplier,
   },
   mythic: {
-    label: RARITY_CONFIG.mythic.label,
-    multiplier: RARITY_CONFIG.mythic.multiplier,
+    label: RARITY_CONFIG.mythic.name,
+    multiplier: RARITY_CONFIG.mythic.rewardMultiplier,
   },
 };
 

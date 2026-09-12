@@ -21,12 +21,7 @@ export function canUnlockSkill(
     };
   }
 
-  if (!skill.isActive) {
-    return {
-      unlocked: false,
-      reason: "This skill is currently unavailable.",
-    };
-  }
+  // Note: isActive is not on Skill type; DB query handles active filtering
 
   if (characterLevel < skill.requiredLevel) {
     return {

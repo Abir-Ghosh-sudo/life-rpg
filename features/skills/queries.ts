@@ -129,7 +129,7 @@ export async function getSkillsWithProgress(
       skill,
       userSkill,
       unlocked: Boolean(
-        userSkill?.isUnlocked,
+        userSkill?.unlockedAt,
       ),
     };
   });
@@ -153,7 +153,7 @@ export async function getSkillSummary(): Promise<
   const userSkills = await getUserSkills();
 
   const unlocked = userSkills.filter(
-    (skill) => skill.isUnlocked,
+    (skill) => skill.unlockedAt !== null,
   ).length;
 
   const total = skills.length;

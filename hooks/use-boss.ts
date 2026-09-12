@@ -73,8 +73,8 @@ export function useBoss() {
     void fetchBoss();
   }, [fetchBoss]);
 
-  const currentHp = progress?.current_hp ?? boss?.max_hp ?? 0;
-  const maxHp = boss?.max_hp ?? 0;
+  const maxHp = boss?.maxHp ?? 0;
+  const currentHp = Math.max(0, maxHp - (progress?.damageDealt ?? 0));
 
   const hpPercentage =
     maxHp > 0
@@ -82,7 +82,7 @@ export function useBoss() {
       : 0;
 
   const isDefeated =
-    progress?.status === "defeated" || currentHp <= 0;
+    progress?.defeated || currentHp <= 0;
 
   return {
     boss,

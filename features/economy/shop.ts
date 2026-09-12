@@ -71,7 +71,7 @@ export function filterShopItems(
   if (options.category) {
     result = result.filter(
       (item) =>
-        item.category === options.category,
+        (item.category ?? item.type) === options.category,
     );
   }
 
@@ -87,17 +87,7 @@ export function filterShopItems(
       options.search.trim().toLowerCase();
 
     result = result.filter((item) =>
-      [
-        item.name,
-        item.description,
-        item.category,
-      ]
-        .filter(Boolean)
-        .some((value) =>
-          String(value)
-            .toLowerCase()
-            .includes(search),
-        ),
+      item.name.toLowerCase().includes(search),
     );
   }
 
@@ -159,7 +149,7 @@ export async function getShopItem(
 ): Promise<ShopItem | null> {
   const item = await getItemById(itemId);
 
-  if (!item || !item.isActive) {
+  if (!item || item.isActive === false) {
     return null;
   }
 

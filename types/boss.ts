@@ -39,6 +39,10 @@ export type Boss = {
   startsAt: ISODateString;
   expiresAt: ISODateString;
 
+  endsAt?: string;
+  damagePerAction?: number;
+  isActive?: boolean;
+
   createdAt: ISODateString;
   updatedAt: ISODateString;
 };

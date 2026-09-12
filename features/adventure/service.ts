@@ -74,7 +74,7 @@ export async function unlockWorld(
       is_unlocked: true,
       is_completed: false,
       progress: 0,
-      total_required: world.regionCount,
+      total_required: world.regionCount ?? 0,
     })
     .select("*")
     .single();

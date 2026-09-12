@@ -1,6 +1,5 @@
 import {
   THEME_CONFIG,
-  type ThemeConfig,
 } from "@/config/themes";
 
 export interface ThemeDefinition {
@@ -21,40 +20,32 @@ export interface ThemeDefinition {
 }
 
 function normalizeTheme(
-  theme: ThemeConfig,
+  slug: string,
+  theme: typeof THEME_CONFIG[keyof typeof THEME_CONFIG],
 ): ThemeDefinition {
   return {
-    slug: theme.slug,
+    slug,
     name: theme.name,
     description: theme.description,
-    primaryColor: theme.colors.primary,
-    secondaryColor:
-      theme.colors.secondary,
-    accentColor:
-      theme.colors.accent,
-    backgroundColor:
-      theme.colors.background,
-    surfaceColor:
-      theme.colors.surface,
-    textColor:
-      theme.colors.text,
-    requiredLevel:
-      theme.requiredLevel,
-    goldCost:
-      theme.goldCost,
-    isDefault:
-      theme.isDefault,
-    isActive:
-      theme.isActive,
-    metadata:
-      theme.metadata,
+    primaryColor: theme.primaryColor,
+    secondaryColor: theme.secondaryColor,
+    accentColor: theme.accentColor,
+    backgroundColor: theme.background,
+    surfaceColor: theme.surface,
+    textColor: theme.text,
+    requiredLevel: theme.requiredLevel,
+    goldCost: theme.price,
+    isDefault: slug === "default",
+    isActive: true,
+    metadata: undefined,
   };
 }
 
 export const THEME_DEFINITIONS: ThemeDefinition[] =
-  Object.values(THEME_CONFIG).map(
-    normalizeTheme,
+  Object.entries(THEME_CONFIG).map(
+    ([slug, theme]) => normalizeTheme(slug, theme),
   );
+
 
 export function getThemeDefinition(
   slug: string,

@@ -25,6 +25,14 @@ export const CLASS_CONFIG = {
       charisma: 1,
     } satisfies CharacterAttributeValues,
 
+    attributeBonuses: {
+      strength: 4,
+      intellect: 0,
+      wisdom: 0,
+      discipline: 2,
+      charisma: 0,
+    } satisfies CharacterAttributeValues,
+
     hpBonus: 25,
     energyBonus: 0,
 
@@ -49,6 +57,14 @@ export const CLASS_CONFIG = {
       wisdom: 3,
       discipline: 2,
       charisma: 1,
+    } satisfies CharacterAttributeValues,
+
+    attributeBonuses: {
+      strength: 0,
+      intellect: 4,
+      wisdom: 2,
+      discipline: 1,
+      charisma: 0,
     } satisfies CharacterAttributeValues,
 
     hpBonus: 0,
@@ -77,6 +93,14 @@ export const CLASS_CONFIG = {
       charisma: 1,
     } satisfies CharacterAttributeValues,
 
+    attributeBonuses: {
+      strength: 1,
+      intellect: 1,
+      wisdom: 4,
+      discipline: 2,
+      charisma: 0,
+    } satisfies CharacterAttributeValues,
+
     hpBonus: 10,
     energyBonus: 10,
 
@@ -103,6 +127,14 @@ export const CLASS_CONFIG = {
       charisma: 1,
     } satisfies CharacterAttributeValues,
 
+    attributeBonuses: {
+      strength: 1,
+      intellect: 1,
+      wisdom: 2,
+      discipline: 4,
+      charisma: 0,
+    } satisfies CharacterAttributeValues,
+
     hpBonus: 10,
     energyBonus: 20,
 
@@ -119,6 +151,7 @@ export const CLASS_CONFIG = {
     icon: string;
     primaryAttribute: Attribute;
     startingStats: CharacterAttributeValues;
+    attributeBonuses: CharacterAttributeValues;
     hpBonus: number;
     energyBonus: number;
     bonuses: Record<string, number>;

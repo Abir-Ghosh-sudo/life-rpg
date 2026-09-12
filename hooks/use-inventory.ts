@@ -59,7 +59,7 @@ export function useInventory() {
   const uniqueItems = items.length;
 
   const equippedItems = useMemo(
-    () => items.filter((item) => item.is_equipped),
+    () => items.filter((item) => item.equipped ?? item.is_equipped ?? item.isEquipped),
     [items],
   );
 

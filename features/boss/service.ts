@@ -56,7 +56,7 @@ export async function attackBoss(
     throw new Error("BOSS_NOT_FOUND");
   }
 
-  if (!boss.isActive) {
+  if (boss.status !== "active" && boss.isActive === false) {
     throw new Error("BOSS_NOT_ACTIVE");
   }
 
@@ -70,8 +70,9 @@ export async function attackBoss(
     }
   }
 
-  if (boss.endsAt) {
-    const endsAt = new Date(boss.endsAt).getTime();
+  const expiry = boss.expiresAt ?? boss.endsAt;
+  if (expiry) {
+    const endsAt = new Date(expiry).getTime();
 
     if (Number.isFinite(endsAt) && now > endsAt) {
       throw new Error("BOSS_EXPIRED");
@@ -99,13 +100,14 @@ export async function attackBoss(
    * The optional client value is treated only as a requested action,
    * then bounded by the configured maximum.
    */
+  const baseDmg = boss.damagePerAction ?? boss.baseDamage ?? 10;
   const requestedDamage = Number.isFinite(input.damage)
     ? Math.floor(input.damage ?? 0)
-    : boss.damagePerAction;
+    : baseDmg;
 
   const maxDamage = Math.max(
     1,
-    Math.floor(boss.damagePerAction),
+    Math.floor(baseDmg),
   );
 
   const damageDealt = Math.min(

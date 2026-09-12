@@ -1,9 +1,8 @@
 import type { Region } from "@/types/adventure";
+import { WORLD_LIST } from "@/config/worlds";
 
-import { WORLD_CONFIG } from "@/config/worlds";
-
-export function getRegionsForWorld(worldId: string) {
-  const world = WORLD_CONFIG.find(
+export function getRegionsForWorld(worldId: string): Region[] {
+  const world = WORLD_LIST.find(
     (item) => item.id === worldId,
   );
 
@@ -11,13 +10,30 @@ export function getRegionsForWorld(worldId: string) {
     return [];
   }
 
-  return world.regions ?? [];
+  return (world.regions ?? []).map((regionId, idx) => ({
+    id: regionId,
+    worldId: world.id,
+    name: regionId
+      .split("_")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" "),
+    description: `${world.name} - ${regionId}`,
+    icon: world.icon,
+    order: idx + 1,
+    requiredLevel: world.requiredLevel,
+    difficulty: "medium" as const,
+    rarity: world.rarity,
+    status: "available" as const,
+    isActive: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  }));
 }
 
 export function getRegionConfig(
   worldId: string,
   regionId: string,
-) {
+): Region | null {
   const regions = getRegionsForWorld(worldId);
 
   return (
@@ -30,7 +46,7 @@ export function getRegionConfig(
 export function getRegionByOrder(
   worldId: string,
   order: number,
-) {
+): Region | null {
   const regions = getRegionsForWorld(worldId);
 
   return (
@@ -43,7 +59,7 @@ export function getRegionByOrder(
 export function getNextRegion(
   worldId: string,
   currentOrder: number,
-) {
+): Region | null {
   const regions = getRegionsForWorld(worldId);
 
   return (
@@ -68,7 +84,7 @@ export function canAccessRegion(
 export function getAccessibleRegions(
   worldId: string,
   characterLevel: number,
-) {
+): Region[] {
   return getRegionsForWorld(worldId).filter(
     (region) =>
       canAccessRegion(region, characterLevel),
@@ -91,6 +107,6 @@ export function toRegionSummary(
     description: region.description,
     order: region.order,
     requiredLevel: region.requiredLevel,
-    isActive: region.isActive,
+    isActive: region.isActive ?? true,
   };
 }

@@ -62,10 +62,10 @@ function clampProbability(
 }
 
 export function normalizeProbability(
-  probability: number,
+  probability?: number,
 ): number {
   const value =
-    toNumber(probability);
+    toNumber(probability ?? 0);
 
   // Supports both 0–1 and 0–100 formats.
   return value > 1

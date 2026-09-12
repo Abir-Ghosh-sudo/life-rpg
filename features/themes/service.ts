@@ -94,7 +94,7 @@ export async function unlockTheme(
 
   if (
     !canUnlockTheme(
-      theme.slug,
+      theme.slug ?? theme.id,
       level,
       gold,
     )
@@ -115,7 +115,7 @@ export async function unlockTheme(
       success: false,
       theme,
       message:
-        `You need ${theme.goldCost} gold to unlock this theme.`,
+        `You need ${theme.goldCost ?? theme.price} gold to unlock this theme.`,
     };
   }
 
@@ -126,20 +126,21 @@ export async function unlockTheme(
    * gold balance, preventing a client from spending
    * another user's gold or making the balance negative.
    */
-  if (theme.goldCost > 0) {
+  if ((theme.goldCost ?? theme.price ?? 0) > 0) {
+    const themeCost = theme.goldCost ?? theme.price ?? 0;
     const { data: updatedCharacter, error } =
       await supabase
         .from("characters")
         .update({
           gold:
             gold -
-            theme.goldCost,
+            themeCost,
         })
         .eq("id", character.id)
         .eq("user_id", userId)
         .gte(
           "gold",
-          theme.goldCost,
+          themeCost,
         )
         .select(
           "id, gold",

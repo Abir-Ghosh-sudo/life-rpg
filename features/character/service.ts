@@ -75,12 +75,12 @@ export async function createCharacter(
     .from("character_stats")
     .insert({
       character_id: character.id,
+      ...defaultStats,
       strength: classStats.strength,
       intellect: classStats.intellect,
       wisdom: classStats.wisdom,
       discipline: classStats.discipline,
       charisma: classStats.charisma,
-      ...defaultStats,
     })
     .select("*")
     .single();

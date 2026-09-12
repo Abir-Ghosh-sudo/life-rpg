@@ -79,8 +79,14 @@ export function generateBoss(
     goldReward,
     durationHours,
     damagePerAction,
+    baseDamage: damagePerAction,
+    type: "daily",
+    rarity: "common",
+    icon: "👹",
+    status: "active",
     isActive: true,
     startsAt: now.toISOString(),
+    expiresAt: endsAt.toISOString(),
     endsAt: endsAt.toISOString(),
   } as GeneratedBossData;
 }

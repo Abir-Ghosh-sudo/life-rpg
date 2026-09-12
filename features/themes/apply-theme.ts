@@ -150,10 +150,10 @@ export function buildThemeCssVariables(
     "--theme-accent":
       theme.accentColor,
     "--theme-background":
-      theme.backgroundColor,
+      theme.backgroundColor ?? theme.primaryColor,
     "--theme-surface":
-      theme.surfaceColor,
+      theme.surfaceColor ?? theme.secondaryColor,
     "--theme-text":
-      theme.textColor,
+      theme.textColor ?? "",
   };
 }

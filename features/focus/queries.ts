@@ -127,7 +127,7 @@ export async function getFocusSessions(
   if (options.status) {
     query = query.eq(
       "status",
-      options.status,
+      options.status as import("@/types/focus").FocusSessionStatus,
     );
   }
 

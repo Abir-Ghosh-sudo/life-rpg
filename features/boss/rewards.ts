@@ -13,7 +13,7 @@ export type BossRewardInput = {
  * Normalize a numeric reward value.
  */
 function normalizeReward(value: number | undefined): number {
-  if (!Number.isFinite(value)) {
+  if (value === undefined || !Number.isFinite(value)) {
     return 0;
   }
 

@@ -16,10 +16,14 @@ function mapTheme(
   return {
     id: String(row.id),
     name: String(row.name),
-    slug: String(row.slug),
+    slug: String(row.slug ?? row.id),
     description: String(
       row.description ?? "",
     ),
+    category: (row.category as Theme["category"]) ?? "default",
+    rarity: (row.rarity as Theme["rarity"]) ?? "common",
+    previewImage: (row.preview_image as string | null) ?? null,
+    backgroundImage: (row.background_image as string | null) ?? null,
     primaryColor: String(
       row.primary_color ?? "",
     ),
@@ -41,20 +45,15 @@ function mapTheme(
     requiredLevel: Number(
       row.required_level ?? 1,
     ),
+    requiredAchievementId: (row.required_achievement_id as string | null) ?? null,
+    price: Number(row.price ?? row.gold_cost ?? 0),
     goldCost: Number(
       row.gold_cost ?? 0,
-    ),
-    isDefault: Boolean(
-      row.is_default,
     ),
     isActive: Boolean(
       row.is_active ?? true,
     ),
-    metadata:
-      (row.metadata as Record<
-        string,
-        unknown
-      > | null) ?? null,
+    status: (row.status as Theme["status"]) ?? "available",
     createdAt: String(
       row.created_at,
     ),
@@ -74,13 +73,12 @@ function mapUserTheme(
     isApplied: Boolean(
       row.is_applied,
     ),
+    equipped: Boolean(
+      row.is_applied ?? row.equipped,
+    ),
     unlockedAt: String(
       row.unlocked_at,
     ),
-    appliedAt:
-      row.applied_at
-        ? String(row.applied_at)
-        : null,
     createdAt: String(
       row.created_at,
     ),

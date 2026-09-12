@@ -70,7 +70,7 @@ export function evaluateAchievement(
 ): EvaluatedAchievement {
   const targetValue = Math.max(
     1,
-    Number(achievement.value ?? 1),
+    Number(achievement.requirementValue ?? achievement.value ?? 1),
   );
 
   const currentValue = Math.max(
@@ -102,7 +102,7 @@ export function evaluateAchievements(
   context: AchievementEvaluationContext,
 ): EvaluatedAchievement[] {
   return achievements
-    .filter((achievement) => achievement.isActive)
+    .filter((achievement) => achievement.isActive !== false)
     .map((achievement) =>
       evaluateAchievement(
         achievement,

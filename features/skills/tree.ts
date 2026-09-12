@@ -1,32 +1,40 @@
 import type { Skill } from "@/types/skill";
 
-import { SKILL_CONFIG } from "@/config/skills";
+import { SKILL_LIST } from "@/config/skills";
+
+// Convert config list entries to Skill type by adding required fields
+function toSkill(item: typeof SKILL_LIST[number] & { id: string }): Skill {
+  return {
+    ...item,
+    attribute: item.attribute ?? null,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  } as Skill;
+}
+
+const SKILL_ENTRIES: Skill[] = SKILL_LIST.map((item) => toSkill(item as typeof item & { id: string }));
 
 export function getSkillTree(): Skill[] {
-  return [...SKILL_CONFIG] as Skill[];
+  return SKILL_ENTRIES;
 }
 
 export function getSkillById(
   skillId: string,
 ): Skill | null {
-  const skill = SKILL_CONFIG.find(
+  const skill = SKILL_ENTRIES.find(
     (item) => item.id === skillId,
   );
 
-  return skill
-    ? (skill as Skill)
-    : null;
+  return skill ?? null;
 }
 
 export function getSkillChildren(
   skillId: string,
 ): Skill[] {
-  return SKILL_CONFIG
-    .filter(
-      (skill) =>
-        skill.prerequisiteSkillId === skillId,
-    )
-    .map((skill) => skill as Skill);
+  return SKILL_ENTRIES.filter(
+    (skill) =>
+      skill.prerequisiteSkillId === skillId,
+  );
 }
 
 export function getSkillPrerequisite(
@@ -88,10 +96,8 @@ export function hasSkillChildren(
 }
 
 export function getRootSkills(): Skill[] {
-  return SKILL_CONFIG
-    .filter(
-      (skill) =>
-        !skill.prerequisiteSkillId,
-    )
-    .map((skill) => skill as Skill);
+  return SKILL_ENTRIES.filter(
+    (skill) =>
+      !skill.prerequisiteSkillId,
+  );
 }

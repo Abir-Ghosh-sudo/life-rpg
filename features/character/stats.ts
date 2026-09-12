@@ -1,5 +1,3 @@
-
-
 import type {
   CharacterAttributeStats,
   CharacterClass,
@@ -21,6 +19,73 @@ export function getDefaultAttributeStats(): CharacterAttributeStats {
   };
 }
 
+export interface DefaultCharacterStats {
+  strength: number;
+  intelligence: number;
+  discipline: number;
+  vitality: number;
+  wisdom?: number;
+  charisma?: number;
+  [key: string]: number | undefined;
+}
+
+/**
+ * Return default character stats.
+ */
+export function getDefaultCharacterStats(): DefaultCharacterStats {
+  return {
+    strength: 10,
+    intelligence: 10,
+    discipline: 10,
+    vitality: 10,
+    wisdom: 10,
+    charisma: 10,
+  };
+}
+
+/**
+ * Calculate character stats from attributes.
+ */
+export function calculateCharacterStats(
+  attributes: Record<string, number | undefined>,
+): Record<string, number> {
+  const strength = Math.max(0, attributes.strength ?? 10);
+  const intelligence = Math.max(0, attributes.intelligence ?? attributes.intellect ?? 10);
+  const discipline = Math.max(0, attributes.discipline ?? 10);
+  const vitality = Math.max(0, attributes.vitality ?? 10);
+  const wisdom = Math.max(0, attributes.wisdom ?? 10);
+  const charisma = Math.max(0, attributes.charisma ?? 10);
+
+  return {
+    strength,
+    intelligence,
+    discipline,
+    vitality,
+    wisdom,
+    charisma,
+  };
+}
+
+/**
+ * Calculate derived stats from character stats.
+ */
+export function calculateDerivedStats(
+  stats: Record<string, number>,
+): Record<string, number> {
+  const strength = stats.strength ?? 10;
+  const intelligence = stats.intelligence ?? 10;
+  const discipline = stats.discipline ?? 10;
+  const vitality = stats.vitality ?? 10;
+
+  return {
+    maxHp: 100 + vitality * 10,
+    maxEnergy: 100 + discipline * 5,
+    attackPower: strength * 2,
+    magicPower: intelligence * 2,
+    defense: vitality * 2,
+  };
+}
+
 /**
  * Calculate the final attribute stats after applying
  * the selected character class bonuses.
@@ -34,19 +99,19 @@ export function calculateClassStats(
   return {
     strength:
       baseStats.strength +
-      (classConfig.attributeBonuses.strength ?? 0),
+      (classConfig.attributeBonuses?.strength ?? 0),
     intellect:
       baseStats.intellect +
-      (classConfig.attributeBonuses.intellect ?? 0),
+      (classConfig.attributeBonuses?.intellect ?? 0),
     wisdom:
       baseStats.wisdom +
-      (classConfig.attributeBonuses.wisdom ?? 0),
+      (classConfig.attributeBonuses?.wisdom ?? 0),
     discipline:
       baseStats.discipline +
-      (classConfig.attributeBonuses.discipline ?? 0),
+      (classConfig.attributeBonuses?.discipline ?? 0),
     charisma:
       baseStats.charisma +
-      (classConfig.attributeBonuses.charisma ?? 0),
+      (classConfig.attributeBonuses?.charisma ?? 0),
   };
 }
 

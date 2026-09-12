@@ -52,12 +52,12 @@ export function useTheme() {
   }, [fetchThemes]);
 
   const unlockedThemes = useMemo(
-    () => themes.filter((theme) => theme.unlocked_at !== null),
+    () => themes.filter((theme) => theme.unlockedAt !== null),
     [themes],
   );
 
   const activeTheme = useMemo(
-    () => themes.find((theme) => theme.is_active) ?? null,
+    () => themes.find((theme) => theme.equipped) ?? null,
     [themes],
   );
 

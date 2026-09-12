@@ -1,13 +1,26 @@
 import type { Achievement } from "@/types/achievement";
 import { ACHIEVEMENT_CONFIG } from "@/config/achievements";
 
+const STATIC_TIMESTAMP = "2024-01-01T00:00:00.000Z";
+
+function getAllConfigs(): Achievement[] {
+  return Object.entries(ACHIEVEMENT_CONFIG).map(([key, item]) => ({
+    id: key,
+    code: key,
+    ...item,
+    isSecret: item.hidden,
+    isActive: true,
+    value: item.requirementValue,
+    createdAt: STATIC_TIMESTAMP,
+    updatedAt: STATIC_TIMESTAMP,
+  })) as Achievement[];
+}
+
 /**
  * Return all configured achievement definitions.
  */
 export function getAchievementDefinitions(): Achievement[] {
-  return ACHIEVEMENT_CONFIG.map((achievement) => ({
-    ...achievement,
-  })) as Achievement[];
+  return getAllConfigs();
 }
 
 /**
@@ -16,13 +29,12 @@ export function getAchievementDefinitions(): Achievement[] {
 export function getAchievementDefinition(
   achievementId: string,
 ): Achievement | null {
-  const achievement = ACHIEVEMENT_CONFIG.find(
-    (item) => item.id === achievementId,
+  const achievements = getAllConfigs();
+  const achievement = achievements.find(
+    (item) => item.id === achievementId || item.code === achievementId,
   );
 
-  return achievement
-    ? (achievement as Achievement)
-    : null;
+  return achievement ?? null;
 }
 
 /**
@@ -31,35 +43,26 @@ export function getAchievementDefinition(
 export function getAchievementByCode(
   code: string,
 ): Achievement | null {
-  const achievement = ACHIEVEMENT_CONFIG.find(
-    (item) => item.code === code,
+  const achievements = getAllConfigs();
+  const achievement = achievements.find(
+    (item) => item.code === code || item.id === code,
   );
 
-  return achievement
-    ? (achievement as Achievement)
-    : null;
+  return achievement ?? null;
 }
 
 /**
  * Get only secret achievements.
  */
 export function getSecretAchievements(): Achievement[] {
-  return ACHIEVEMENT_CONFIG
-    .filter((achievement) => achievement.isSecret)
-    .map((achievement) => ({
-      ...achievement,
-    })) as Achievement[];
+  return getAllConfigs().filter((achievement) => achievement.isSecret || achievement.hidden);
 }
 
 /**
  * Get only active achievements.
  */
 export function getActiveAchievements(): Achievement[] {
-  return ACHIEVEMENT_CONFIG
-    .filter((achievement) => achievement.isActive)
-    .map((achievement) => ({
-      ...achievement,
-    })) as Achievement[];
+  return getAllConfigs().filter((achievement) => achievement.isActive !== false);
 }
 
 /**
@@ -68,7 +71,7 @@ export function getActiveAchievements(): Achievement[] {
 export function achievementExists(
   achievementId: string,
 ): boolean {
-  return ACHIEVEMENT_CONFIG.some(
-    (achievement) => achievement.id === achievementId,
+  return getAllConfigs().some(
+    (achievement) => achievement.id === achievementId || achievement.code === achievementId,
   );
 }

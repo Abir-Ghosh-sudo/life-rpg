@@ -19,6 +19,8 @@ export const nonEmptyStringSchema = z
   .trim()
   .min(1);
 
+export const nonEmptyString = nonEmptyStringSchema;
+
 export const positiveIntegerSchema = z
   .number()
   .int()
@@ -92,7 +94,7 @@ export function minMaxLengthSchema(
 export function enumSchema<T extends readonly string[]>(
   values: T,
 ) {
-  return z.enum(values as [
+  return z.enum(values as unknown as [
     T[number],
     ...T[number][],
   ]);
