@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ABIR/OneDrive/Desktop/hacathon/life%20rpg/life-rpg/app/not-found.tsx"],"sourcesContent":["export default function NotFound() {\r\n  return (\r\n    <main>\r\n      <h1>404 - Realm Not Found</h1>\r\n      <p>The page you are looking for does not exist.</p>\r\n\r\n      <p>\r\n        <a href=\"/dashboard\">Return to dashboard</a>\r\n      </p>\r\n\r\n      <p>\r\n        <a href=\"/\">Return to home</a>\r\n      </p>\r\n    </main>\r\n  );\r\n}"],"names":["NotFound","href"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8OAAC;;0BACC,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BAAE;;;;;;0BAEH,8OAAC;0BACC,cAAA,8OAAC;oBAAEC,MAAK;8BAAa;;;;;;;;;;;0BAGvB,8OAAC;0BACC,cAAA,8OAAC;oBAAEA,MAAK;8BAAI;;;;;;;;;;;;;;;;;AAIpB"}}]
+}
