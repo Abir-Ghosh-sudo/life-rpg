@@ -23,9 +23,16 @@ export default function SignupPage() {
       const result = await signupAction({ name, email, password }).catch(() => null);
 
       if (result && !result.success && result.message) {
-        setErrorMsg(result.message);
-        setLoading(false);
-        return;
+        const isFetchError =
+          result.message.toLowerCase().includes("fetch failed") ||
+          result.message.toLowerCase().includes("failed to fetch") ||
+          result.message.toLowerCase().includes("network");
+
+        if (!isFetchError) {
+          setErrorMsg(result.message);
+          setLoading(false);
+          return;
+        }
       }
 
       loginUser(email, name);

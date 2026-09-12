@@ -383,10 +383,11 @@ export function ScreenPets() {
     soundEffects.playGoldClink();
 
     // Add cute floating hearts
+    const baseId = Date.now();
     setHearts((prev) => [
       ...prev,
-      { id: Date.now(), x: 28, y: -20 },
-      { id: Date.now() + 1, x: 42, y: -30 },
+      { id: `${baseId}-1-${Math.random()}`, x: 28, y: -20 },
+      { id: `${baseId}-2-${Math.random()}`, x: 42, y: -30 },
     ]);
 
     // Resume walking after 3.2 seconds

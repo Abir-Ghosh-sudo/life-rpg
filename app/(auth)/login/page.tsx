@@ -23,10 +23,16 @@ export default function LoginPage() {
       const result = await loginAction({ email, password }).catch(() => null);
 
       if (result && !result.success && result.message) {
-        // If Supabase rejected with explicit credential failure
-        setErrorMsg(result.message);
-        setLoading(false);
-        return;
+        const isFetchError =
+          result.message.toLowerCase().includes("fetch failed") ||
+          result.message.toLowerCase().includes("failed to fetch") ||
+          result.message.toLowerCase().includes("network");
+
+        if (!isFetchError) {
+          setErrorMsg(result.message);
+          setLoading(false);
+          return;
+        }
       }
 
       // Log in hero state and enter realm
