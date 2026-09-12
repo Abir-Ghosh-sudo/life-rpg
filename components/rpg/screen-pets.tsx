@@ -326,7 +326,7 @@ export function ScreenPets() {
   const [isPaused, setIsPaused] = useState(false);
   const [isWaving, setIsWaving] = useState(false);
   const [speechText, setSpeechText] = useState<string | null>(null);
-  const [hearts, setHearts] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [hearts, setHearts] = useState<{ id: string | number; x: number; y: number }[]>([]);
   const [enabled, setEnabled] = useState(true);
 
   const pausePointsRef = useRef<number[]>([25, 55, 80]); // percentages where pet stops to say hi
