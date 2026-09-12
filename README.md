@@ -2,122 +2,140 @@
 
 <div align="center">
 
+<img src="https://img.shields.io/badge/⚔️_LIFE_RPG-LEVEL_UP_YOUR_REAL_LIFE-6D5DFB?style=for-the-badge" alt="Life RPG"/>
+
 ### 🎮 Turn Your Real Life Into an Adventure
 
-**Life RPG** is a gamified productivity and personal growth application that transforms everyday activities into meaningful quests. Complete tasks, earn XP, level up your character, unlock achievements, defeat bosses, and build a better version of yourself — one quest at a time.
+**A gamified productivity & personal growth platform where your goals become quests,
+your consistency becomes XP, and your progress becomes power.**
 
 <br />
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge\&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=for-the-badge\&logo=supabase\&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active%20Development-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Life_RPG-6D5DFB?style=for-the-badge)](https://life-rpg-eight-rust.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge\&logo=next.js\&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge\&logo=supabase\&logoColor=white)](https://supabase.com/)
+[![Status](https://img.shields.io/badge/Status-Active_Development-22C55E?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-6366F1?style=for-the-badge)](#license)
+
+<br />
+
+> **Your life is the game. Your goals are the quests.
+> Every small improvement makes you stronger.**
 
 </div>
 
 ---
 
-## 🌟 Overview
+## 🌟 What is Life RPG?
 
-Most productivity applications focus only on checking tasks off a list.
+Most productivity apps give you a checklist.
 
-**Life RPG takes a different approach.**
+**Life RPG gives you a journey.**
 
-Your real-life goals become **quests**.
-Your consistency becomes **XP**.
-Your progress becomes **character growth**.
-Your biggest challenges become **boss battles**.
+Life RPG transforms everyday goals, habits, study sessions, work, exercise, and personal challenges into an RPG-style progression system.
 
-The goal is simple:
-
-> **Make self-improvement feel like playing a game.**
-
-Whether you are studying, working, building habits, exercising, or pursuing personal goals, Life RPG helps turn consistent effort into a rewarding progression system.
-
----
-
-# 🎯 Core Concept
+Instead of simply checking a task as "done", you:
 
 ```text
-Real-Life Activity
-       ↓
-     Quest
-       ↓
- Complete Task
-       ↓
-Earn XP + Rewards
-       ↓
-Level Up Character
-       ↓
-Unlock Skills & Achievements
-       ↓
-Explore New Adventures
-       ↓
-Become a Better Version of Yourself
+        🎯 Set a Goal
+             │
+             ▼
+        ⚔️ Create Quest
+             │
+             ▼
+       ✅ Complete Quest
+             │
+             ▼
+       ⭐ Earn XP + Gold
+             │
+             ▼
+        🆙 Level Up
+             │
+             ▼
+     🌳 Unlock Skills
+             │
+             ▼
+      🏆 Earn Achievements
+             │
+             ▼
+       🗺️ Explore Further
+             │
+             ▼
+     👑 Become Stronger
 ```
 
+### The philosophy is simple:
+
+> **Make self-improvement feel rewarding.**
+
 ---
 
-# ✨ Key Features
+# ✨ Features
 
-## 🗡️ Quest System
+<table>
+<tr>
+<td width="50%">
 
-Transform your daily tasks into interactive quests.
+### ⚔️ Quest System
+
+Turn real-life tasks into RPG quests.
 
 * Create custom quests
-* Track quest progress
-* Assign difficulty levels
-* Categorize activities
-* Earn XP for completion
-* Receive rewards
-* Build quest chains
-* Complete daily quests
+* Difficulty levels
+* Quest categories
+* Daily quests
+* Quest chains
+* Progress tracking
+* XP rewards
+* Gold rewards
 
----
+</td>
 
-## 🧙 Character Progression
+<td width="50%">
 
-Your productivity directly affects your character.
+### 🧙 Character Progression
 
-Track and improve:
+Your real-world effort develops your character.
 
-* ⭐ Experience Points
-* 🆙 Character Level
-* ❤️ Health Points
-* ⚡ Energy
-* 🔥 Streaks
-* 🎯 Combo Multipliers
-* 📊 Character Attributes
-* 🏆 Character Titles
+* XP
+* Levels
+* HP
+* Energy
+* Streaks
+* Combo multipliers
+* Attributes
+* Character titles
 
-Choose and develop your own character identity as you progress.
+</td>
+</tr>
 
----
+<tr>
+<td>
 
-## 👹 Boss Battles
+### 👹 Boss Battles
 
-Turn difficult goals into epic challenges.
+Turn your biggest goals into epic challenges.
 
-Boss battles can represent:
+Bosses can represent:
 
+* Exams
 * Major projects
-* Exam preparation
 * Long-term goals
 * Habit challenges
 * Personal milestones
 
-Complete quests to reduce boss health and unlock rewards after victory.
+Complete quests to damage bosses and claim victory rewards.
 
----
+</td>
 
-## 🗺️ Adventure System
+<td>
 
-Progress beyond your daily routine.
+### 🗺️ Adventure Mode
 
-Explore different worlds and regions as you grow.
+Your productivity becomes an adventure.
 
-Possible adventure progression:
+Explore worlds and unlock new regions as your character grows.
 
 ```text
 🏘️ Village
@@ -131,33 +149,35 @@ Possible adventure progression:
 🐉 Dragon Realm
 ```
 
-New regions can be unlocked based on player progress and achievements.
+</td>
+</tr>
 
----
+<tr>
+<td>
 
-## 🏆 Achievements
+### 🏆 Achievements
 
-Celebrate important milestones.
+Celebrate meaningful milestones.
 
-Achievements may be unlocked for:
+Unlock achievements for:
 
-* Completing quests
-* Maintaining streaks
-* Reaching new levels
-* Defeating bosses
-* Unlocking skills
-* Exploring new regions
-* Building consistent habits
+* Quest completion
+* Streaks
+* Level milestones
+* Boss victories
+* Skill unlocks
+* Exploration
+* Consistency
 
----
+</td>
 
-## 🌳 Skill Tree
+<td>
 
-Develop your personal abilities through a progression system.
+### 🌳 Skill Tree
 
-Players can unlock skills and upgrade their character through structured skill branches.
+Build your character through meaningful progression paths.
 
-Possible areas include:
+Potential branches include:
 
 * 📚 Knowledge
 * 💪 Discipline
@@ -165,30 +185,32 @@ Possible areas include:
 * 🧠 Focus
 * 🔥 Consistency
 
----
+</td>
+</tr>
 
-## 🛍️ Shop & Inventory
+<tr>
+<td>
 
-Earn rewards and manage your in-game items.
+### 🛍️ Shop & Inventory
 
-Features include:
+Turn your progress into an in-game economy.
 
 * Item collection
-* Equipment management
-* Inventory system
-* Rarity levels
-* Item categories
-* Virtual economy
-* Wallet tracking
-* Purchase history
+* Rarity system
+* Categories
+* Inventory
+* Equipment
+* Wallet
+* Purchases
+* Transaction history
 
----
+</td>
 
-## ⏱️ Focus Mode
+<td>
 
-Stay productive with a dedicated focus system.
+### ⏱️ Focus Mode
 
-Features include:
+Turn focused work into measurable progress.
 
 * Focus timer
 * Session tracking
@@ -196,13 +218,15 @@ Features include:
 * Focus history
 * Productivity sessions
 
----
+</td>
+</tr>
 
-## 📊 Analytics Dashboard
+<tr>
+<td>
 
-Understand your progress with meaningful insights.
+### 📊 Analytics
 
-Track:
+Understand your growth over time.
 
 * XP growth
 * Activity patterns
@@ -212,128 +236,272 @@ Track:
 * Productivity trends
 * Activity history
 
----
+</td>
 
-## 🎲 Random Events
+<td>
 
-Make productivity less predictable and more exciting.
+### 🎲 Random Events
 
-Random events can introduce:
+Keep your journey unpredictable.
 
-* Bonus rewards
-* Special challenges
-* Surprise XP
-* Limited-time opportunities
-* Event-based progression
+Possible events include:
 
----
+* 🎁 Bonus rewards
+* ⚡ Surprise XP
+* 🎯 Special challenges
+* ⏳ Limited-time opportunities
+* 🏅 Event progression
 
-## 🎨 Theme System
-
-Personalize your Life RPG experience.
-
-The application includes a flexible theme architecture with:
-
-* Theme switching
-* Theme previews
-* Unlockable themes
-* Persistent preferences
+</td>
+</tr>
+</table>
 
 ---
 
-# 🖥️ Application Modules
+# 🎨 Built to Feel Like a Game
 
-| Module          | Description                                    |
-| --------------- | ---------------------------------------------- |
-| 🏠 Dashboard    | Overview of player progress and daily activity |
-| ⚔️ Quests       | Create, manage, and complete real-life quests  |
-| 🧙 Character    | View character identity, level, and attributes |
-| 🗺️ Adventure   | Explore worlds and unlock new regions          |
-| 👹 Boss         | Complete major challenges through boss battles |
-| 🛍️ Shop        | Browse and purchase virtual items              |
-| 🎒 Inventory    | Manage collected and equipped items            |
-| 🏆 Achievements | Track unlocked milestones                      |
-| 🌳 Skill Tree   | Unlock new abilities and progression paths     |
-| 📜 History      | View previous activities and completed quests  |
-| 📊 Analytics    | Analyze productivity and growth                |
-| ⏱️ Focus        | Track focused productivity sessions            |
-| ⚙️ Settings     | Manage application preferences                 |
+Life RPG isn't designed to look like another generic productivity dashboard.
+
+The UI is built around a **light, modern fantasy RPG aesthetic** with:
+
+* ✨ Interactive feedback
+* 🎮 Game-inspired terminology
+* 🪄 Smooth animations
+* ⭐ XP and reward feedback
+* 🏆 Achievement moments
+* 🗺️ Adventure progression
+* 👹 Boss encounters
+* 🌳 Skill progression
+* 📱 Responsive layouts
+
+The goal is to make every interaction feel meaningful.
+
+---
+
+# 🧩 Application Modules
+
+| Module              | Purpose                                  |
+| :------------------ | :--------------------------------------- |
+| 🏠 **Dashboard**    | Overview of your RPG progress            |
+| ⚔️ **Quests**       | Create, manage and complete tasks        |
+| 🧙 **Character**    | Level, attributes and character identity |
+| 🗺️ **Adventure**   | Explore worlds and unlock regions        |
+| 👹 **Boss Battles** | Turn major goals into challenges         |
+| 🛍️ **Shop**        | Purchase virtual items                   |
+| 🎒 **Inventory**    | Manage collected items                   |
+| 🏆 **Achievements** | Track milestones                         |
+| 🌳 **Skill Tree**   | Unlock abilities                         |
+| 📜 **History**      | Review completed activities              |
+| 📊 **Analytics**    | Understand productivity trends           |
+| ⏱️ **Focus**        | Track focused work sessions              |
+| ⚙️ **Settings**     | Manage preferences                       |
+
+---
+
+# 🔄 The Core Gameplay Loop
+
+Life RPG is built around a simple progression loop:
+
+```text
+                 ┌─────────────────┐
+                 │   REAL-LIFE GOAL │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │   ⚔️ QUEST       │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │  ✅ COMPLETION   │
+                 └────────┬────────┘
+                          │
+                          ▼
+                ┌──────────────────┐
+                │ ⭐ XP + 🪙 GOLD   │
+                └─────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │   🆙 LEVEL UP    │
+                 └────────┬────────┘
+                          │
+                          ▼
+              ┌──────────────────────┐
+              │ 🌳 SKILLS + 🏆        │
+              │    ACHIEVEMENTS       │
+              └──────────┬───────────┘
+                         │
+                         ▼
+                  🗺️ NEW ADVENTURE
+                         │
+                         └───────► 🔁
+```
 
 ---
 
 # 🏗️ Architecture
 
-Life RPG follows a modular architecture designed to keep the application scalable and maintainable.
+Life RPG follows a modular architecture designed for scalability, maintainability, and clear separation of responsibilities.
 
 ```text
-Life RPG
-│
-├── App Layer
-│   ├── Authentication
-│   ├── Dashboard
-│   ├── Quests
-│   ├── Character
-│   ├── Adventure
-│   ├── Boss Battles
-│   ├── Shop
-│   ├── Analytics
-│   └── Focus
-│
-├── Component Layer
-│   ├── UI Components
-│   ├── Layout Components
-│   ├── RPG Components
-│   └── Feature Components
-│
-├── Feature Layer
-│   ├── Authentication
-│   ├── Quests
-│   ├── Progression
-│   ├── Character
-│   ├── Economy
-│   ├── Achievements
-│   └── Analytics
-│
-├── Backend Layer
-│   └── Supabase
-│
-└── Database
-    ├── Users
-    ├── Profiles
-    ├── Characters
-    ├── Quests
-    ├── Achievements
-    ├── Inventory
-    ├── Wallet
-    ├── Bosses
-    └── Progress Data
+┌───────────────────────────────────────────────┐
+│                    UI LAYER                   │
+│       Next.js • React • Tailwind • Motion     │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                 FEATURE LAYER                 │
+│                                               │
+│ Auth • Quests • Character • Progression       │
+│ Economy • Boss • Adventure • Achievements     │
+│ Skills • Focus • Analytics • Events           │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                 SERVER LAYER                  │
+│                                               │
+│ Server Actions • Validation • Services        │
+│ Ownership Checks • RPG Logic                  │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                SUPABASE LAYER                 │
+│                                               │
+│ Authentication • PostgreSQL • RLS             │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                    DATA                       │
+│                                               │
+│ Users • Profiles • Characters • Quests        │
+│ Achievements • Skills • Inventory • Wallet    │
+│ Bosses • Adventures • Focus • Progress        │
+└───────────────────────────────────────────────┘
 ```
 
 ---
 
 # 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
-* **Next.js**
-* **TypeScript**
-* **React**
-* **CSS / Modern Styling**
-* **Responsive UI**
+| Technology        | Role                       |
+| :---------------- | :------------------------- |
+| **Next.js 16**    | Full-stack React framework |
+| **React**         | UI development             |
+| **TypeScript**    | Type-safe development      |
+| **Tailwind CSS**  | Responsive styling         |
+| **Framer Motion** | Animations and transitions |
+| **Lucide React**  | Interface icons            |
 
-### Backend & Database
+## Backend
 
-* **Supabase**
-* **PostgreSQL**
-* **Row Level Security**
-* **Authentication**
+| Technology             | Role                         |
+| :--------------------- | :--------------------------- |
+| **Supabase**           | Backend platform             |
+| **PostgreSQL**         | Persistent database          |
+| **Supabase Auth**      | Authentication               |
+| **Row Level Security** | User data isolation          |
+| **Server Actions**     | Secure server-side mutations |
 
-### Development Tools
+## Development
 
-* ESLint
-* PostCSS
 * TypeScript
-* Environment Configuration
+* ESLint
+* Vitest
+* End-to-End testing
+* Environment-based configuration
+
+---
+
+# 🔐 Authentication & Security
+
+Life RPG uses a structured authentication architecture.
+
+### Authentication
+
+* 📧 Email & password
+* 🔵 Google OAuth
+* 🔑 Password recovery
+* 🔄 Password reset
+* 🛡️ Protected sessions
+* 🔒 Authenticated routes
+
+### Security Principles
+
+User-specific data is isolated using **Row Level Security**.
+
+The application architecture also keeps important RPG calculations server-controlled instead of trusting arbitrary values sent from the browser.
+
+This is especially important for:
+
+```text
+XP
+Gold
+Rewards
+Quest Completion
+Character Progression
+Inventory
+Wallet
+Achievements
+```
+
+The goal is to prevent users from simply manipulating client-side values to gain unfair progression.
+
+---
+
+# 🗄️ Database
+
+Life RPG uses PostgreSQL through Supabase.
+
+The core data relationship looks like:
+
+```text
+                     👤 USER
+                       │
+             ┌─────────┴─────────┐
+             │                   │
+          Profile            Character
+                                 │
+        ┌────────┬────────┬──────┼────────┬─────────┐
+        │        │        │      │        │         │
+      Quests   Skills   Items   Wallet   Bosses   Adventure
+        │
+        └───────────────┐
+                        │
+                  Completions
+                        │
+                   Progression
+                        │
+               ┌────────┼────────┐
+               │        │        │
+              XP      Streaks  Attributes
+```
+
+Database migrations cover systems including:
+
+* Profiles
+* Characters
+* Quests
+* Quest completions
+* Achievements
+* Skills
+* Inventory
+* Wallet
+* Transactions
+* Bosses
+* Adventure worlds
+* Regions
+* Themes
+* Notifications
+* Focus sessions
+* Security policies
 
 ---
 
@@ -342,101 +510,122 @@ Life RPG
 ```text
 life-rpg/
 │
-├── app/                 # Application routes and pages
-├── components/          # Reusable UI and game components
-├── features/            # Business logic and feature modules
-├── lib/                 # Shared utilities and services
-├── hooks/               # Custom React hooks
-├── types/               # TypeScript definitions
-├── config/              # Game configuration
-├── supabase/            # Database migrations and seed files
-├── public/              # Images, avatars, worlds and sounds
-├── tests/               # Unit, integration and E2E tests
-└── scripts/             # Development utilities
+├── app/
+│   ├── auth/
+│   ├── game/
+│   │   ├── dashboard/
+│   │   ├── quests/
+│   │   ├── character/
+│   │   ├── adventure/
+│   │   ├── boss/
+│   │   ├── shop/
+│   │   ├── inventory/
+│   │   ├── achievements/
+│   │   ├── skill-tree/
+│   │   ├── history/
+│   │   ├── analytics/
+│   │   ├── focus/
+│   │   └── settings/
+│   └── api/
+│
+├── components/
+│   ├── ui/
+│   ├── layout/
+│   ├── rpg/
+│   └── features/
+│
+├── features/
+│   ├── auth/
+│   ├── quests/
+│   ├── character/
+│   ├── progression/
+│   ├── boss/
+│   ├── adventure/
+│   ├── achievements/
+│   ├── skills/
+│   ├── economy/
+│   ├── focus/
+│   ├── analytics/
+│   ├── events/
+│   ├── themes/
+│   └── notifications/
+│
+├── lib/
+│   ├── supabase/
+│   ├── validation/
+│   └── utils/
+│
+├── hooks/
+├── types/
+├── config/
+├── supabase/
+│   ├── migrations/
+│   └── seed/
+│
+├── public/
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+│
+└── scripts/
 ```
 
 ---
 
-# 🔐 Authentication
+# 🚀 Live Demo
 
-Life RPG includes a structured authentication flow.
+<div align="center">
 
-Supported pages include:
+## ⚔️ Play Life RPG
 
-* Login
-* Sign Up
-* Forgot Password
-* Reset Password
-* Authentication Callback
+### Experience the application yourself.
 
-The application architecture is designed to work with Supabase authentication and protected user sessions.
+**[🚀 Open Live Demo](https://life-rpg-eight-rust.vercel.app/)**
 
----
+<br />
 
-# 🗄️ Database Design
+`https://life-rpg-eight-rust.vercel.app/`
 
-The backend structure supports multiple interconnected systems.
-
-### Core Data
-
-```text
-User
- │
- ├── Profile
- │
- └── Character
-      │
-      ├── Character Stats
-      ├── Quests
-      ├── Achievements
-      ├── Skills
-      ├── Inventory
-      ├── Wallet
-      ├── Boss Progress
-      ├── Adventure Progress
-      └── Focus Sessions
-```
-
-The project includes database migrations for profiles, characters, quests, achievements, inventory, wallets, bosses, worlds, skills, themes, notifications, and security policies.
+</div>
 
 ---
 
-# 🚀 Getting Started
+# 💻 Getting Started
 
-## 1️⃣ Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone <your-repository-url>
-```
-
-## 2️⃣ Navigate to the Project
-
-```bash
 cd life-rpg
 ```
 
-## 3️⃣ Install Dependencies
+## 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-## 4️⃣ Configure Environment Variables
+## 3. Configure Environment Variables
 
-Create a `.env.local` file based on the provided environment example.
+Create a `.env.local` file:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-## 5️⃣ Run the Development Server
+> ⚠️ Never expose or commit the `SUPABASE_SERVICE_ROLE_KEY`.
+
+## 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit:
+Then open:
 
 ```text
 http://localhost:3000
@@ -446,100 +635,154 @@ http://localhost:3000
 
 # 🧪 Testing
 
-The project structure supports multiple testing layers.
+Life RPG is structured with multiple testing layers.
 
-### Unit Testing
+### 🔬 Unit Tests
 
-Tests core systems such as:
+Core game logic is tested independently.
+
+Examples:
 
 * XP calculation
-* Levels
+* Level progression
 * Attributes
 * Streaks
-* Combo systems
-* Energy
 * Rewards
-* Achievements
 * Shop logic
+* Achievements
 
-### Integration Testing
+### 🔗 Integration Tests
 
-Tests interactions between major systems including:
+Feature-level interactions cover areas such as:
 
 * Authentication
-* Quests
-* Character progression
-* Purchases
+* Quest validation
+* Progression
+* Character systems
+* Economy
 * Achievements
-* Security policies
+* Security contracts
 
-### End-to-End Testing
+### 🎭 End-to-End Tests
 
-Tests complete user flows such as:
+Critical user journeys are designed to be tested from the browser.
 
 ```text
-Authentication
-     ↓
+Sign Up
+   ↓
+Login
+   ↓
+Dashboard
+   ↓
 Create Quest
-     ↓
+   ↓
 Complete Quest
-     ↓
+   ↓
 Earn XP
-     ↓
+   ↓
 Level Up
-     ↓
-Unlock Rewards
+   ↓
+Refresh
+   ↓
+Progress Persists
 ```
 
 ---
 
 # 📸 Screenshots
 
-> Screenshots of the application will be added here.
+The application includes a collection of RPG-inspired interfaces covering the main gameplay experience.
+
+Recommended screenshots:
 
 ```text
 screenshots/
+│
 ├── dashboard.png
 ├── quests.png
 ├── character.png
 ├── adventure.png
 ├── boss-battle.png
+├── shop.png
+├── inventory.png
+├── achievements.png
+├── skill-tree.png
 ├── analytics.png
 └── focus-mode.png
 ```
 
 ---
 
-# 🗺️ Future Roadmap
+# 🗺️ Roadmap
+
+### 🎮 Gameplay
+
+* [x] Quest system
+* [x] XP progression
+* [x] Character progression
+* [x] Achievements
+* [x] Shop & inventory
+* [x] Focus system
+* [x] Analytics
+* [x] Adventure system
+* [x] Boss system
+* [x] Random events
+* [x] Theme system
+
+### 🚀 Future
 
 * [ ] Multiplayer challenges
-* [ ] Friends and social features
-* [ ] AI-powered quest suggestions
-* [ ] Smart productivity insights
-* [ ] Advanced character customization
-* [ ] Mobile application
-* [ ] Additional worlds and regions
-* [ ] Seasonal events
+* [ ] Friends & social system
 * [ ] Leaderboards
 * [ ] Community challenges
+* [ ] Seasonal events
+* [ ] Advanced character customization
+* [ ] AI-powered quest suggestions
+* [ ] Smart productivity insights
+* [ ] Mobile application
+* [ ] More worlds and regions
 
 ---
 
-# 💡 Why Life RPG?
+# 🎯 Why Life RPG?
 
-Life RPG is built around one idea:
+Traditional productivity:
 
-> **Consistency should feel rewarding.**
+```text
+Task → Complete → Next Task → Repeat
+```
 
-Instead of treating productivity as a repetitive checklist, Life RPG transforms progress into a visual and interactive journey.
+Life RPG:
 
-Every completed task matters.
+```text
+Goal
+ ↓
+Quest
+ ↓
+Challenge
+ ↓
+XP
+ ↓
+Rewards
+ ↓
+Level Up
+ ↓
+New Skills
+ ↓
+Achievements
+ ↓
+New Adventure
+```
 
-Every streak matters.
+The difference is **motivation**.
 
-Every small improvement contributes to something bigger.
+A small action may seem insignificant in real life.
 
-### Your real life becomes the game.
+But in Life RPG, every completed quest contributes to a larger progression journey.
+
+> **You don't need to transform your life overnight.**
+>
+> **Just complete the next quest.**
 
 ---
 
@@ -547,14 +790,21 @@ Every small improvement contributes to something bigger.
 
 Contributions, ideas, and improvements are welcome.
 
-If you would like to contribute:
+```text
+Fork
+ ↓
+Create Branch
+ ↓
+Make Changes
+ ↓
+Commit
+ ↓
+Push
+ ↓
+Pull Request
+```
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Commit your work
-5. Push the branch
-6. Open a Pull Request
+If you have an idea for a new RPG mechanic, productivity feature, world, quest type, or achievement, feel free to contribute.
 
 ---
 
@@ -566,18 +816,24 @@ This project is licensed under the **MIT License**.
 
 <div align="center">
 
-## ⚔️ Start Your Quest Today
+# ⚔️ LIFE RPG
 
-### Turn Goals Into Quests.
+### 🎮 Turn Goals Into Quests
 
-### Turn Effort Into XP.
+### ⭐ Turn Effort Into XP
 
-### Turn Progress Into Power.
+### 🆙 Turn Progress Into Power
 
 <br />
 
-**Life RPG — Level Up Your Real Life. 🎮**
+**Your Life. Your Character. Your Adventure.**
 
-⭐ If you like this project, consider giving it a star!
+<br />
+
+[🚀 **Play Life RPG**](https://life-rpg-eight-rust.vercel.app/)
+
+<br />
+
+⭐ **Star the repository if you enjoyed the project!**
 
 </div>
